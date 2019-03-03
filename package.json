@@ -1,0 +1,43 @@
+{
+  "name": "ngx-translate-all",
+  "version": "0.0.0",
+  "description": "Translate Angular project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamaks/ngx-translate-all.git"
+  },
+  "keywords": [
+    "angular",
+    "ngx-translate",
+    "translate"
+  ],
+  "author": "Jamaks",
+  "license": "MIT",
+  "bin": "./bin/ngx-translate-all",
+  "bugs": {
+    "url": "https://github.com/jamaks/ngx-translate-all/issues"
+  },
+  "homepage": "https://github.com/jamaks/ngx-translate-all#readme",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc",
+    "postbuild": "copy bin dist && copy package.json dist && copy README.md dist && copy LICENSE dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@angular/compiler": "~7.1.0",
+    "@angular/compiler-cli": "~7.1.0",
+    "@angular/core": "~7.1.0",
+    "chalk": "^2.4.1",
+    "minimist": "^1.2.0",
+    "ngast": "^0.2.4",
+    "replace": "^1.1.0",
+    "rxjs": "~6.3.3",
+    "typescript": "~3.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "copy": "^0.3.2",
+    "rimraf": "^2.6.3"
+  }
+}
