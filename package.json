@@ -13,7 +13,7 @@
   ],
   "author": "Jamaks",
   "license": "MIT",
-  "bin": "./bin/ngx-translate-all",
+  "bin": "./bin/translate",
   "bugs": {
     "url": "https://github.com/jamaks/ngx-translate-all/issues"
   },
