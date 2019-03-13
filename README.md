@@ -2,7 +2,7 @@
 
 Automate translate Angular project
 
-<img src="https://raw.githubusercontent.com/jamaks/ngx-translate-all/master/assets/screen.jpg" alt="screen angular counter" width="600">
+<img src="https://raw.githubusercontent.com/jamaks/ngx-translate-all/master/assets/screen2.png" alt="screen angular counter" width="600">
 
 ## Usage
 
