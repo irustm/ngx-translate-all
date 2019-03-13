@@ -8,7 +8,6 @@ import { ProjectSymbols } from "ngast";
 import { resourceResolver } from "./utils/resource";
 import { ElementAst, TextAst, ASTWithSource } from "@angular/compiler";
 
-translate();
 
 export function translate() {
   const error = message => {
