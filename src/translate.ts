@@ -18,7 +18,7 @@ const info = (message, count1?, count2?) => {
       ` ${count2 ? "/ " + chalk.default.yellowBright(count2) : ""}`
   );
 };
-translate();
+
 export function translate() {
   const config = getCliConfig();
   console.log("Parsing...");
