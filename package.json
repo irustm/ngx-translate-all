@@ -1,23 +1,23 @@
 {
   "name": "ngx-translate-all",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "description": "Translate Angular project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamaks/ngx-translate-all.git"
+    "url": "https://github.com/irustm/ngx-translate-all.git"
   },
   "keywords": [
     "angular",
     "ngx-translate",
     "translate"
   ],
-  "author": "Jamaks",
+  "author": "irustm",
   "license": "MIT",
   "bin": "./bin/translate",
   "bugs": {
-    "url": "https://github.com/jamaks/ngx-translate-all/issues"
+    "url": "https://github.com/irustm/ngx-translate-all/issues"
   },
-  "homepage": "https://github.com/jamaks/ngx-translate-all#readme",
+  "homepage": "https://github.com/irustm/ngx-translate-all#readme",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "tsc",
