@@ -17,7 +17,7 @@ const info = (message, count1?, count2?) => {
       ` ${count2 ? "/ " + chalk.default.yellowBright(count2) : ""}`
   );
 };
-
+translate();
 export function translate() {
   const config = getCliConfig();
   console.log("Parsing...");
@@ -48,10 +48,10 @@ export function translate() {
 }
 
 
-function validateArgs(args: any[], error: Function) {
-  args.forEach(arg => {
-    if (!arg || arg.trim().length === 0) {
-      error(`Connot find --${arg} argument`);
+function validateArgs(args: any, attrs: string[], error: Function) {
+  attrs.forEach(attr => {
+    if (!args[attr] || args[attr].trim().length === 0) {
+      error(`Connot find --${attr} argument`);
       process.exit(1);
     }
   });
@@ -59,7 +59,7 @@ function validateArgs(args: any[], error: Function) {
 
 function getCliConfig(): CliConfig {
   const args: any = minimist(process.argv.slice(2));
-  validateArgs([args.in, args.out, args.outPath, args.format], error);
+  validateArgs(args, ['in', 'out', 'outPath', 'format'], error);
   let projectPath = args.p;
   const inLocacte = args.in;
   const format = args.format;

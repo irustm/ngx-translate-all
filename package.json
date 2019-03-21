@@ -22,7 +22,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc",
     "postbuild": "copy bin dist && copy package.json dist && copy README.md dist && copy LICENSE dist",
-    "test:project": "ts-node src/translate.ts -p ..\\ngx-translate-all-test\\tsconfig.json --in ru --out en,fr --outPath ..\\ngx-translate-all-test\\src\\assets\\i18n"
+    "test:project": "ts-node src/translate.ts -p ..\\ngx-translate-all-test\\tsconfig.json --format ngx-translate --in ru --out en,fr --outPath ..\\ngx-translate-all-test\\src\\assets\\i18n"
   },
   "dependencies": {
     "@angular/compiler": "~7.1.0",
