@@ -3,14 +3,18 @@ export function getTextAst(element: ElementAst): string[] {
   const texts: string[] = [];
   if (element && element.children && element.children.length) {
     element.children.forEach((child: any) => {
+      const name = child.constructor.name;
       const value: TextAst | ASTWithSource | string | any = (child as TextAst)
         .value;
       if (value) {
-        if (typeof value === 'string' && value.trim() !== '') {
+        if (name === 'TextAst' && value.trim() !== '') {
           texts.push(child.value);
         } else {
           const source: string = (value as ASTWithSource).source;
-          if (typeof value === 'object' && source && source.trim() !== '') {
+          // if (typeof value === 'object' && source && source.trim() !== '') {
+          //   texts.push(source);
+          // }
+          if(value.constructor.name === 'ASTWithSource'){
             texts.push(source);
           }
         }

@@ -4,7 +4,8 @@ import { existsSync, writeFile, mkdirSync } from "fs";
 import { ProjectSymbols } from "ngast";
 
 import { resourceResolver } from "./utils/resource";
-import { replacer } from './ngx-translate';
+import * as ngxTranslate from './ngx-translate';
+import * as i18nTranslate from './i18n';
 import { CliConfig } from './models/models';
 
 const error = message => {
@@ -34,11 +35,14 @@ export function translate() {
     );
     switch (config.format) {
       case 'ngx-translate':
-        replacer(allDirectives, config);
+        ngxTranslate.replacer(allDirectives, config);
         break;
-    
+      case 'i18n':
+        i18nTranslate.replacer(allDirectives, config);
+        break;
+      
       default:
-        error('format "' + config.format + '" unsoported, Only: ngx-translate.');
+        error('format "' + config.format + '" unsoported, Only: ngx-translate, i18n.');
         process.exit(1);
         break;
     }
