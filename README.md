@@ -13,7 +13,7 @@ npx ngx-translate-all --in ru --out en,fr --outPath src/assets/i18n
 npx ngx-translate-all  -p ./ngx-translate-all-test/tsconfig.json --in ru --out en,fr --outPath ./ngx-translate-all-test/src/assets/i18n
 ```
 ## CLI options
-- --format `ngx-translate` or 'i18n'
+- --format `ngx-translate` or `i18n`
 - --in `ru`
 - --out `en,fr`
 - --outPath `./ngx-translate-all-test/src/assets/i18n`
