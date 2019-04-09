@@ -7,10 +7,10 @@ Automate translate Angular project
 ## Usage
 
 ```bash
-npx ngx-translate-all --in ru --out en,fr --outPath src/assets/i18n
+npx ngx-translate-all --format ngx-translate --in ru --out en,fr --outPath src/assets/i18n
 
 # or to define a tsconfig
-npx ngx-translate-all  -p ./ngx-translate-all-test/tsconfig.json --in ru --out en,fr --outPath ./ngx-translate-all-test/src/assets/i18n
+npx ngx-translate-all --format ngx-translate -p ./ngx-translate-all-test/tsconfig.json --in ru --out en,fr --outPath ./ngx-translate-all-test/src/assets/i18n
 ```
 ## CLI options
 - --format `ngx-translate` or `i18n`
