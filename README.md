@@ -18,9 +18,9 @@ npx ngx-translate-all --format ngx-translate -p ./ngx-translate-all-test/tsconfi
 - --out `en,fr`
 - --outPath `./ngx-translate-all-test/src/assets/i18n`
 
-## Comming soon
+## Migrate tool
 
-A new feature will be added. Migration from ngx-translate to standart i18n.
+[ngx-translate-migrate](https://github.com/irustm/ngx-translate-migrate) - Tool for migrate from ngx-translate to Angular i18n.
 
 ## License
 MIT
