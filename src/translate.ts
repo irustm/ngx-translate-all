@@ -1,7 +1,7 @@
 import * as minimist from "minimist";
 import * as chalk from "chalk";
-import { existsSync, writeFile, mkdirSync } from "fs";
-import { ProjectSymbols } from "ngast";
+import { existsSync } from "fs";
+import { WorkspaceSymbols } from "ngast";
 
 import { resourceResolver } from "./utils/resource";
 import * as ngxTranslate from './ngx-translate';
@@ -22,32 +22,26 @@ const info = (message, count1?, count2?) => {
 export function translate() {
   const config = getCliConfig();
   console.log("Parsing...");
-  let parseError: any = null;
-  const projectSymbols = new ProjectSymbols(
-    config.projectPath,
-    resourceResolver,
-    e => (parseError = e)
-  );
-  let allDirectives = projectSymbols.getDirectives();
-  if (!parseError) {
-    allDirectives = allDirectives.filter(
-      el => el.symbol.filePath.indexOf("node_modules") === -1
-    );
-    switch (config.format) {
-      case 'ngx-translate':
-        ngxTranslate.replacer(allDirectives, config);
-        break;
-      case 'i18n':
-        i18nTranslate.replacer(allDirectives, config);
-        break;
-      
-      default:
-        error('format "' + config.format + '" unsoported, Only: ngx-translate, i18n.');
-        process.exit(1);
-        break;
-    }
-  } else {
-    error(parseError);
+
+  const workspace = new WorkspaceSymbols(config.projectPath);
+
+  let allDirectives = workspace.getAllComponents();
+
+  // allDirectives = allDirectives.filter(
+  //     el => el.filePath.indexOf("node_modules") === -1
+  // );
+  switch (config.format) {
+    case 'ngx-translate':
+      ngxTranslate.replacer(allDirectives, config);
+      break;
+    case 'i18n':
+      i18nTranslate.replacer(allDirectives, config);
+      break;
+
+    default:
+      error('format "' + config.format + '" unsoported, Only: ngx-translate, i18n.');
+      process.exit(1);
+      break;
   }
 }
 

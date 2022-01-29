@@ -1,8 +1,8 @@
 import { DirectiveSymbol } from 'ngast';
 import { getTextAst } from './utils/text-ast';
-import { ElementAst } from '@angular/compiler';
 import * as replace from "replace";
 import { CliConfig } from './models/models';
+type ElementAst = any;
 
 export function replacer(allDirectives: DirectiveSymbol[], config: CliConfig): void {
   allDirectives.forEach(el => {
