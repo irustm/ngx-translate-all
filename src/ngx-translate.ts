@@ -1,10 +1,11 @@
 import { DirectiveSymbol } from 'ngast';
 import { getTextAst } from './utils/text-ast';
-import { ElementAst } from '@angular/compiler';
 import { existsSync, writeFile, mkdirSync } from "fs";
 import * as replace from "replace";
 import * as path from "path";
 import { CliConfig } from './models/models';
+
+type ElementAst = any;
 
 export function replacer(allDirectives: DirectiveSymbol[], config: CliConfig): void {
   const jsonResult = {};

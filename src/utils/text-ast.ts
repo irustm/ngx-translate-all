@@ -1,4 +1,8 @@
-import { ElementAst, TextAst, ASTWithSource } from '@angular/compiler';
+type ElementAst = any;
+type TextAst = any;
+type ASTWithSource = any;
+
+
 export function getTextAst(element: ElementAst): string[] {
   const texts: string[] = [];
   if (element && element.children && element.children.length) {
